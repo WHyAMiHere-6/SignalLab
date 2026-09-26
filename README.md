@@ -1,174 +1,163 @@
-# 🎛️ SignalLab
+# SignalLab
 
-**SignalLab** is a digital signal processing laboratory built from scratch in Python.
+A Python-based digital signal processing toolkit built progressively from fundamental signal-processing concepts to practical DSP experiments.
 
-The project is being developed progressively through a series of engineering challenges. Each challenge introduces a new signal-processing concept, implements it in code, tests it, and eventually integrates it into the SignalLab application.
+The project follows a **LeetCode-style learning approach**: each DSP concept is implemented as a small problem/challenge, tested, and then added to the toolkit.
 
-The goal is not simply to use existing DSP libraries, but to **understand and implement the underlying concepts step by step**.
+## 🚀 Current Features
 
----
+### Signal Generation
+- Sine wave generation with configurable:
+  - Amplitude
+  - Frequency
+  - Sampling frequency
+  - Duration
+  - Phase
 
-## 🚧 Project Status
+### Signal Composition
+- Addition of two signals
+- Handles signals with different sampling rates
+- Uses interpolation to align signals before combining them
 
-**Currently:** Challenge 001 — Signal Generation
+### Frequency-Domain Analysis
+- FFT computation using NumPy
+- Frequency-axis generation
+- Magnitude-spectrum analysis
 
-The project is under active development.
+### Sampling & Nyquist
+- Signal sampling
+- Nyquist theorem checking
+- Sampling-rate experiments
 
-### Roadmap
+### Aliasing
+- Aliasing detection
+- Aliased-frequency calculation
+- Experimental verification of aliasing using FFT
 
-- [ ] Signal generation
-- [ ] Signal operations
-- [ ] Sampling and reconstruction
-- [ ] Quantization
-- [ ] Convolution
-- [ ] Correlation
-- [ ] Signal power and RMS
-- [ ] SNR analysis
-- [ ] DFT from scratch
-- [ ] FFT
-- [ ] Magnitude and phase spectrum
-- [ ] Spectral leakage
-- [ ] Windowing
-- [ ] FIR filter design
-- [ ] IIR filter design
-- [ ] Frequency response
-- [ ] Interactive visualization
-- [ ] Signal analysis workspace
-- [ ] Automated tests
-- [ ] Documentation
-- [ ] v1.0 release
+### Signal Reconstruction
+- Reconstruction of sampled signals using linear interpolation
 
----
+### Convolution
+- Linear convolution using NumPy
 
-## 🧠 Development Philosophy
-
-SignalLab follows a **challenge-driven development approach**.
-
-Instead of starting with a complete application and filling in copied implementations, each component is developed progressively:
-
-```text
-Problem
-   ↓
-Implementation
-   ↓
-Testing
-   ↓
-Analysis
-   ↓
-Integration
-   ↓
-Next Challenge
-```
-
-The project emphasizes understanding the mathematics and algorithms behind DSP rather than treating signal-processing libraries as black boxes.
+### Filtering
+- Moving-average FIR filtering
 
 ---
 
-## 🛠️ Technology
+## 🧠 Learning Progress
+
+| Challenge | Concept | Status |
+|---|---|---|
+| 001 | Sine Wave Generation | ✅ |
+| 002 | Signal Composition & Interpolation | ✅ |
+| 003 | FFT Analysis | ✅ |
+| 004 | Sampling & Nyquist Theorem | ✅ |
+| 005 | Aliasing Detection | ✅ |
+| 006 | Aliased Frequency Calculation | ✅ |
+| 007 | FFT Verification of Aliasing | ✅ |
+| 008 | Signal Reconstruction | ✅ |
+| 009 | Linear Convolution | ✅ |
+| 010 | Moving-Average Filter | ✅ |
+
+---
+
+## 🛠️ Technologies
 
 - Python
 - NumPy
-- SciPy
 - Matplotlib
-
-Additional technologies may be introduced as the project evolves.
-
----
-
-## 📚 Topics
-
-SignalLab will eventually cover concepts including:
-
-### Signals
-
-- Continuous and discrete signals
-- Sinusoidal signals
-- Composite signals
-- Signal operations
-- Time shifting
-- Time reversal
-
-### Sampling
-
-- Sampling frequency
-- Nyquist theorem
-- Aliasing
-- Reconstruction
-
-### Signal Analysis
-
-- RMS
-- Power
-- Energy
-- SNR
-- Correlation
-- Convolution
-
-### Fourier Analysis
-
-- DFT
-- FFT
-- Magnitude spectrum
-- Phase spectrum
-- Frequency resolution
-- Spectral leakage
-- Windowing
-
-### Digital Filters
-
-- FIR filters
-- IIR filters
-- Low-pass filters
-- High-pass filters
-- Band-pass filters
-- Band-stop filters
-- Frequency response
+- SciPy
+- Pandas
 
 ---
 
-## 📁 Planned Structure
+## ⚙️ Setup
+
+Clone the repository:
+
+```bash
+git clone <repository-url>
+cd SignalLab
+```
+
+Create a virtual environment:
+
+```bash
+python -m venv .venv
+```
+
+Activate it on Windows:
+
+```powershell
+.venv\Scripts\Activate.ps1
+```
+
+Install dependencies:
+
+```bash
+pip install -r requirements.txt
+```
+
+Run the project:
+
+```bash
+python main.py
+```
+
+---
+
+## 📁 Project Structure
 
 ```text
 SignalLab/
 │
-├── src/
-│   ├── signals/
-│   ├── transforms/
-│   ├── filters/
-│   └── analysis/
-│
-├── tests/
-│
-├── examples/
-│
-├── docs/
-│
 ├── main.py
 ├── requirements.txt
+├── README.md
 ├── .gitignore
-└── README.md
+└── .venv/              # Local only, not tracked by Git
 ```
 
-The structure will evolve as the project grows.
+---
+
+## 🎯 Project Goal
+
+SignalLab is being developed as a progressive DSP learning and experimentation platform.
+
+The long-term goal is to build a reusable Python toolkit covering:
+
+- Signal generation
+- Sampling and reconstruction
+- Fourier analysis
+- Convolution
+- FIR and IIR filters
+- Frequency response
+- Modulation and demodulation
+- Noise analysis
+- Digital communication experiments
+- Time-frequency analysis
+- DSP visualization
+
+The project will evolve continuously as new concepts and experiments are implemented.
 
 ---
 
-## 🎯 Goal
+## 📌 Current Focus
 
-The final goal is to turn SignalLab into an interactive DSP workbench where users can:
+The next stage will focus on:
 
-1. Generate signals
-2. Manipulate signals
-3. Sample and reconstruct them
-4. Analyze signals in the time and frequency domains
-5. Design and apply filters
-6. Visualize the results
-7. Experiment with DSP concepts interactively
+1. Noisy signal generation
+2. Moving-average filtering experiments
+3. FIR filter design
+4. Filter frequency response
+5. `scipy.signal.freqz`
+6. Low-pass, high-pass, band-pass and band-stop filters
 
 ---
 
-## 👨‍💻 Development
+## 📚 Learning Philosophy
 
-SignalLab is being developed as a personal engineering project with an emphasis on learning, experimentation, and implementation from first principles.
+Instead of treating DSP as only a collection of mathematical formulas, SignalLab focuses on implementing each concept in Python and **verifying the theory experimentally through signals, plots and numerical results.**
 
-> **Build it. Understand it. Test it. Improve it.**
+> Learn → Implement → Test → Visualize → Expand
